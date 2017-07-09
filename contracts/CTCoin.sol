@@ -36,7 +36,7 @@ contract CTCoin {
   }
 
   // getCTCoinBalance(address): (read only) returns amount of CT coins at address
-  function getCTCoinBalance(address targetAddress) returns (uint _amount){
+  function getCTCoinBalance(address targetAddress) constant returns (uint _amount){
     if(targetAddress != address(0)) {
       _amount = balances[targetAddress];
     } else {
