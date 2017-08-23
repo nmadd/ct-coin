@@ -1,0 +1,148 @@
+miner.stop()
+checkAllBalances()
+web3.fromWei(eth.getBalance(eth.coinbase), "ether")
+txpool.status
+6060604052341561000f57600080fd5b5b336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b5b6103b0806100616000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680632c8ea8eb1461005457806365f7407e146100a1578063d681ac8b146100e3575b600080fd5b341561005f57600080fd5b61008b600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610125565b6040518082815260200191505060405180910390f35b34156100ac57600080fd5b6100e1600480803590602001909190803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506101ec565b005b34156100ee57600080fd5b610123600480803590602001909190803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506102d7565b005b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415156101a357600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205490506101e6565b600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205490505b5b919050565b81600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541015610238576102d3565b81600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555081600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055505b5050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561033257610380565b81600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055505b50505600a165627a7a72305820cc50b2ffcd08c1ffc2ae7c868f55ef04653ef43927ec9a6138
+var code="6060604052341561000f57600080fd5b5b336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b5b6103b0806100616000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680632c8ea8eb1461005457806365f7407e146100a1578063d681ac8b146100e3575b600080fd5b341561005f57600080fd5b61008b600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610125565b6040518082815260200191505060405180910390f35b34156100ac57600080fd5b6100e1600480803590602001909190803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506101ec565b005b34156100ee57600080fd5b610123600480803590602001909190803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506102d7565b005b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415156101a357600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205490506101e6565b600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205490505b5b919050565b81600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541015610238576102d3565b81600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555081600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055505b5050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561033257610380565b81600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055505b50505600a165627a7a72305820cc50b2ffcd08c1ffc2ae7c868f55ef04653ef43927ec9a61388a3a874569a1c30029"
+var code="6060604052341561000f57600080fd5b5b336000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055505b5b6103b0806100616000396000f30060606040526000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680632c8ea8eb1461005457806365f7407e146100a1578063d681ac8b146100e3575b600080fd5b341561005f57600080fd5b61008b600480803573ffffffffffffffffffffffffffffffffffffffff16906020019091905050610125565b6040518082815260200191505060405180910390f35b34156100ac57600080fd5b6100e1600480803590602001909190803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506101ec565b005b34156100ee57600080fd5b610123600480803590602001909190803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506102d7565b005b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415156101a357600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205490506101e6565b600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205490505b5b919050565b81600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020541015610238576102d3565b81600160003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000206000828254039250508190555081600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055505b5050565b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614151561033257610380565b81600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020600082825401925050819055505b50505600a165627a7a72305820cc50b2ffcd08c1ffc2ae7c868f55ef04653ef43927ec9a61388a3a874569a1c30029";
+var transactionHash = web3.eth.sendTransaction({data: code}, function(transactionHash, err) {
+  if (!err)
+    console.log(transactionHash); // "0x7f9fade1c0d57a7af66ab4ead7c2eb7b11a91385"
+});
+var transactionHash = web3.eth.sendTransaction({data: code}, function(transactionHash, err) { if (!err) console.log(transactionHash); // "0x7f9fade1c0d57a7af66ab4ead7c2eb7b11a91385" });
+var transactionHash = web3.eth.sendTransaction({data: code}, function(transactionHash, err) { if (!err) console.log(transactionHash);});
+var transactionHash = web3.eth.sendTransaction({data: code}, function(transactionHash, err) { if (!err) console.log("error");});
+var transactionHash = web3.eth.sendTransaction({data: code}, function(transactionHvarclash, err) { if (!err) console.log("error");});
+var code = "pragma solidity ^0.4.11; contract CTCoin { /***** STATE *****/ // banker: public address of contract creator address banker; // balances: tracks all coin balances mapping (address => uint) private balances; /***** CONSTRUCTOR *****/ function CTCoin() { banker = msg.sender; } /***** METHODS *****/ // mintCoins(amount, receiver): 'mint' coins - send amount to address + update balances (only callable by banker) function mintCoins(uint amount, address receiver) { if(msg.sender != banker) return; balances[receiver] += amount; } // sendCoins(amount, address): send a specific amount of coins to an address + update balances function sendCoins(uint amount, address receiver) { if(balances[msg.sender] < amount) return; balances[msg.sender] -= amount; balances[receiver] += amount; } // getCTCoinBalance(address): (read only) returns amount of CT coins at address function getCTCoinBalance(address targetAddress) constant returns (uint _amount){ if(targetAddress != address(0)) { _amount = balances[targetAddress]; } else { _amount = balances[msg.sender]; } } } "
+contract = eth.compile.solidity(code).test
+miner.stop()
+web3.fromWei(eth.getBalance(eth.coinbase), "ether")
+loadScript(deployContract.js)
+loadScript(/Users/jainanavati/Documents/Work/Development/projects/Solidity/ct-coin/deployContract.js)
+loadScript(deployContract.js)
+loadScript('helpers/deployContract.js')
+contract
+var contract ='pragma solidity ^0.4.11; contract CTCoin { /***** STATE *****/ // banker: public address of contract creator address banker; // balances: tracks all coin balances mapping (address => uint) private balances; /***** CONSTRUCTOR *****/ function CTCoin() { banker = msg.sender; } /***** METHODS *****/ // mintCoins(amount, receiver): 'mint' coins - send amount to address + update balances (only callable by banker) function mintCoins(uint amount, address receiver) { if(msg.sender != banker) return; balances[receiver] += amount; } // sendCoins(amount, address): send a specific amount of coins to an address + update balances function sendCoins(uint amount, address receiver) { if(balances[msg.sender] < amount) return; balances[msg.sender] -= amount; balances[receiver] += amount; } // getCTCoinBalance(address): (read only) returns amount of CT coins at address function getCTCoinBalance(address targetAddress) constant returns (uint _amount){ if(targetAddress != address(0)) { _amount = balances[targetAddress]; } else { _amount = balances[msg.sender]; } } } ';
+con = 'pragma solidity ^0.4.11; contract CTCoin { /***** STATE *****/ // banker: public address of contract creator address banker; // balances: tracks all coin balances mapping (address => uint) private balances; /***** CONSTRUCTOR *****/ function CTCoin() { banker = msg.sender; } /***** METHODS *****/ // mintCoins(amount, receiver): 'mint' coins - send amount to address + update balances (only callable by banker) function mintCoins(uint amount, address receiver) { if(msg.sender != banker) return; balances[receiver] += amount; } // sendCoins(amount, address): send a specific amount of coins to an address + update balances function sendCoins(uint amount, address receiver) { if(balances[msg.sender] < amount) return; balances[msg.sender] -= amount; balances[receiver] += amount; } // getCTCoinBalance(address): (read only) returns amount of CT coins at address function getCTCoinBalance(address targetAddress) constant returns (uint _amount){ if(targetAddress != address(0)) { _amount = balances[targetAddress]; } else { _amount = balances[msg.sender]; } } } '
+con = 'pragma solidity ^0.4.11; contract CTCoin { /***** STATE *****/ // banker: public address of contract creator address banker; // balances: tracks all coin balances mapping (address => uint) private balances; /***** CONSTRUCTOR *****/ function CTCoin() { banker = msg.sender; } /***** METHODS *****/ // mintCoins(amount, receiver): 'mint' coins - send amount to address + update balances (only callable by banker) function mintCoins(uint amount, address receiver) { if(msg.sender != banker) return; balances[receiver] += amount; } // sendCoins(amount, address): send a specific amount of coins to an address + update balances function sendCoins(uint amount, address receiver) { if(balances[msg.sender] < amount) return; balances[msg.sender] -= amount; balances[receiver] += amount; } // getCTCoinBalance(address): (read only) returns amount of CT coins at address function getCTCoinBalance(address targetAddress) constant returns (uint _amount){ if(targetAddress != address(0)) { _amount = balances[targetAddress]; } else { _amount = balances[msg.sender]; } } } ';
+source
+source = " pragma solidity ^0.4.11; contract CTCoin { /***** STATE *****/ // banker: public address of contract creator address banker; // balances: tracks all coin balances mapping (address => uint) private balances; /***** CONSTRUCTOR *****/ function CTCoin() { banker = msg.sender; } /***** METHODS *****/ // mintCoins(amount, receiver): 'mint' coins - send amount to address + update balances (only callable by banker) function mintCoins(uint amount, address receiver) { if(msg.sender != banker) return; balances[receiver] += amount; } // sendCoins(amount, address): send a specific amount of coins to an address + update balances function sendCoins(uint amount, address receiver) { if(balances[msg.sender] < amount) return; balances[msg.sender] -= amount; balances[receiver] += amount; } // getCTCoinBalance(address): (read only) returns amount of CT coins at address function getCTCoinBalance(address targetAddress) constant returns (uint _amount){ if(targetAddress != address(0)) { _amount = balances[targetAddress]; } else { _amount = balances[msg.sender]; } } } "
+deployContract(source,eth.coinbase)
+miner.stop()
+deployContract(source,eth.coinbase)
+source = "npm install solc
+source = "pragma solidity ^0.4.11; contract CTCoin { /***** STATE *****/ // banker: public address of contract creator address banker; // balances: tracks all coin balances mapping (address => uint) private balances; /***** CONSTRUCTOR *****/ function CTCoin() { banker = msg.sender; } /***** METHODS *****/ // mintCoins(amount, receiver): 'mint' coins - send amount to address + update balances (only callable by banker) function mintCoins(uint amount, address receiver) { if(msg.sender != banker) return; balances[receiver] += amount; } // sendCoins(amount, address): send a specific amount of coins to an address + update balances function sendCoins(uint amount, address receiver) { if(balances[msg.sender] < amount) return; balances[msg.sender] -= amount; balances[receiver] += amount; } // getCTCoinBalance(address): (read only) returns amount of CT coins at address function getCTCoinBalance(address targetAddress) constant returns (uint _amount){ if(targetAddress != address(0)) { _amount = balances[targetAddress]; } else { _amount = balances[msg.sender]; } } }"
+deployContract(source,eth.coinbase)
+loadScript('helpers/deployContract.js')
+deployContract(source,eth.coinbase)
+loadScript('helpers/deployContract.js')
+source = "pragma solidity ^0.4.11; contract CTCoin { /***** STATE *****/ // banker: public address of contract creator address banker; // balances: tracks all coin balances mapping (address => uint) private balances; /***** CONSTRUCTOR *****/ function CTCoin() { banker = msg.sender; } /***** METHODS *****/ // mintCoins(amount, receiver): 'mint' coins - send amount to address + update balances (only callable by banker) function mintCoins(uint amount, address receiver) { if(msg.sender != banker) return; balances[receiver] += amount; } // sendCoins(amount, address): send a specific amount of coins to an address + update balances function sendCoins(uint amount, address receiver) { if(balances[msg.sender] < amount) return; balances[msg.sender] -= amount; balances[receiver] += amount; } // getCTCoinBalance(address): (read only) returns amount of CT coins at address function getCTCoinBalance(address targetAddress) constant returns (uint _amount){ if(targetAddress != address(0)) { _amount = balances[targetAddress]; } else { _amount = balances[msg.sender]; } } }"
+deployContract(source,eth.coinbase)
+npm install file-system --save
+deployContract(source,eth.coinbase)
+source = "pragma solidity ^0.4.11; contract CTCoin { /***** STATE *****/ // banker: public address of contract creator address banker; // balances: tracks all coin balances mapping (address => uint) private balances; /***** CONSTRUCTOR *****/ function CTCoin() { banker = msg.sender; } /***** METHODS *****/ // mintCoins(amount, receiver): 'mint' coins - send amount to address + update balances (only callable by banker) function mintCoins(uint amount, address receiver) { if(msg.sender != banker) return; balances[receiver] += amount; } // sendCoins(amount, address): send a specific amount of coins to an address + update balances function sendCoins(uint amount, address receiver) { if(balances[msg.sender] < amount) return; balances[msg.sender] -= amount; balances[receiver] += amount; } // getCTCoinBalance(address): (read only) returns amount of CT coins at address function getCTCoinBalance(address targetAddress) constant returns (uint _amount){ if(targetAddress != address(0)) { _amount = balances[targetAddress]; } else { _amount = balances[msg.sender]; } } }"
+loadScript('helpers/deployContract.js')
+deployContract(source,eth.coinbase)
+loadScript('helpers/deployContract.js')
+deployContract(source,eth.coinbase)
+admin.setSolc("/usr/local/bin/solc")
+deployContract(source,eth.coinbase)
+loadScript('helpers/deployContract.js')
+eth.compile.solidity("")
+eth.getCompilers()
+test = "contract test { function multiply(uint a) returns(uint d) { return a * 7; } }"
+contract = eth.compile.solidity(test).test
+source = "contract CTCoin { /***** STATE *****/ // banker: public address of contract creator address banker; // balances: tracks all coin balances mapping (address => uint) private balances; /***** CONSTRUCTOR *****/ function CTCoin() { banker = msg.sender; } /***** METHODS *****/ // mintCoins(amount, receiver): 'mint' coins - send amount to address + update balances (only callable by banker) function mintCoins(uint amount, address receiver) { if(msg.sender != banker) return; balances[receiver] += amount; } // sendCoins(amount, address): send a specific amount of coins to an address + update balances function sendCoins(uint amount, address receiver) { if(balances[msg.sender] < amount) return; balances[msg.sender] -= amount; balances[receiver] += amount; } // getCTCoinBalance(address): (read only) returns amount of CT coins at address function getCTCoinBalance(address targetAddress) constant returns (uint _amount){ if(targetAddress != address(0)) { _amount = balances[targetAddress]; } else { _amount = balances[msg.sender]; } } } "
+contract = eth.compile.solidity(source).test
+var source = "pragma solidity ^0.4.11; contract CTCoin { // banker: public address of contract creator address banker; // balances: tracks all coin balances mapping (address => uint) private balances; function CTCoin() { banker = msg.sender; } // mintCoins(amount, receiver): 'mint' coins - send amount to address + update balances (only callable by banker) function mintCoins(uint amount, address receiver) { if(msg.sender != banker) return; balances[receiver] += amount; } // sendCoins(amount, address): send a specific amount of coins to an address + update balances function sendCoins(uint amount, address receiver) { if(balances[msg.sender] < amount) return; balances[msg.sender] -= amount; balances[receiver] += amount; } // getCTCoinBalance(address): (read only) returns amount of CT coins at address function getCTCoinBalance(address targetAddress) constant returns (uint _amount){ if(targetAddress != address(0)) { _amount = balances[targetAddress]; } else { _amount = balances[msg.sender]; } } } "
+var source = "pragma solidity ^0.4.11; contract CTCoin { // banker: public address of contract creator address banker; // balances: tracks all coin balances mapping (address => uint) private balances; function CTCoin() { banker = msg.sender; } // mintCoins(amount, receiver): 'mint' coins - send amount to address + update balances (only callable by banker) function mintCoins(uint amount, address receiver) { if(msg.sender != banker) return; balances[receiver] += amount; } // sendCoins(amount, address): send a specific amount of coins to an address + update balances function sendCoins(uint amount, address receiver) { if(balances[msg.sender] < amount) return; balances[msg.sender] -= amount; balances[receiver] += amount; } // getCTCoinBalance(address): (read only) returns amount of CT coins at address function getCTCoinBalance(address targetAddress) constant returns (uint _amount){ if(targetAddress != address(0)) { _amount = balances[targetAddress]; } else { _amount = balances[msg.sender]; } } }"
+var ctc = "pragma solidity ^0.4.11; contract CTCoin { // banker: public address of contract creator address banker; // balances: tracks all coin balances mapping (address => uint) private balances; function CTCoin() { banker = msg.sender; } // mintCoins(amount, receiver): 'mint' coins - send amount to address + update balances (only callable by banker) function mintCoins(uint amount, address receiver) { if(msg.sender != banker) return; balances[receiver] += amount; } // sendCoins(amount, address): send a specific amount of coins to an address + update balances function sendCoins(uint amount, address receiver) { if(balances[msg.sender] < amount) return; balances[msg.sender] -= amount; balances[receiver] += amount; } // getCTCoinBalance(address): (read only) returns amount of CT coins at address function getCTCoinBalance(address targetAddress) constant returns (uint _amount){ if(targetAddress != address(0)) { _amount = balances[targetAddress]; } else { _amount = balances[msg.sender]; } } }"
+ctc = "pragma solidity ^0.4.11;
+contract CTCoin {
+  // banker: public address of contract creator
+  address banker;
+  // balances: tracks all coin balances
+  mapping (address => uint) private balances;
+  function CTCoin() {
+    banker = msg.sender;
+  }
+  // mintCoins(amount, receiver): 'mint' coins - send amount to address + update balances (only callable by banker)
+  function mintCoins(uint amount, address receiver) {
+    if(msg.sender != banker) return;
+    balances[receiver] += amount;
+  }
+  // sendCoins(amount, address): send a specific amount of coins to an address + update balances
+  function sendCoins(uint amount, address receiver) {
+    if(balances[msg.sender] < amount) return;
+    balances[msg.sender] -= amount;
+    balances[receiver] += amount;
+  }
+  // getCTCoinBalance(address): (read only) returns amount of CT coins at address
+  function getCTCoinBalance(address targetAddress) constant returns (uint _amount){
+    if(targetAddress != address(0)) {
+      _amount = balances[targetAddress];
+    } else {
+      _amount = balances[msg.sender];
+    }
+  }
+}
+ctc = "pragma solidity ^0.4.11; contract CTCoin { // banker: public address of contract creator address banker; // balances: tracks all coin balances mapping (address => uint) private balances; function CTCoin() { banker = msg.sender; } // mintCoins(amount, receiver): 'mint' coins - send amount to address + update balances (only callable by banker) function mintCoins(uint amount, address receiver) { if(msg.sender != banker) return; balances[receiver] += amount; } // sendCoins(amount, address): send a specific amount of coins to an address + update balances function sendCoins(uint amount, address receiver) { if(balances[msg.sender] < amount) return; balances[msg.sender] -= amount; balances[receiver] += amount; } // getCTCoinBalance(address): (read only) returns amount of CT coins at address function getCTCoinBalance(address targetAddress) constant returns (uint _amount){ if(targetAddress != address(0)) { _amount = balances[targetAddress]; } else { _amount = balances[msg.sender]; } } }"
+deployContract(ctc,eth.coinbase)
+contract = eth.compile.solidity(ctc).test
+loadScript('helpers/deployContract.js')
+deployContract(ctc,eth.coinbase)
+deployContract(test,eth.coinbase)
+loadScript('helpers/deployContract.js')
+deployContract(test,eth.coinbase)
+loadScript('helpers/deployContract.js')
+deployContract(test,eth.coinbase)
+loadScript('helpers/deployContract.js')
+deployContract(test,eth.coinbase)
+loadScript('helpers/deployContract.js')
+deployContract(test,eth.coinbase)
+loadScript('helpers/deployContract.js')
+deployContract(test,eth.coinbase)
+loadScript('helpers/deployContract.js')
+deployContract(test,eth.coinbase)
+loadScript('helpers/deployContract.js')
+deployContract(test,eth.coinbase)
+loadScript('helpers/deployContract.js')
+deployContract(test,eth.coinbase)
+loadScript('helpers/deployContract.js')
+deployContract(test,eth.coinbase)
+loadScript('helpers/deployContract.js')
+deployContract(test,eth.coinbase)
+loadScript('helpers/deployContract.js')
+deployContract(test,eth.coinbase)
+loadScript('helpers/deployContract.js')
+deployContract(test,eth.coinbase)
+loadScript('helpers/deployContract.js')
+deployContract(test,eth.coinbase)
+loadScript('helpers/deployContract.js')
+deployContract(test,eth.coinbase)
+loadScript('helpers/deployContract.js')
+deployContract(test,eth.coinbase)
+loadScript('helpers/deployContract.js')
+deployContract(test,eth.coinbase)
+loadScript('helpers/deployContract.js')
+deployContract(test,eth.coinbase)
+loadScript('helpers/deployContract.js')
+deployContract(test,eth.coinbase)
+loadScript('helpers/deployContract.js')
+deployContract(test,eth.coinbase)
+loadScript('helpers/deployContract.js')
+deployContract(test,eth.coinbase)
+solc
+loadScript('helpers/deployContract.js')
+deployContract(test,eth.coinbase)
+loadScript('helpers/deployContract.js')
+deployContract(test,eth.coinbase)
+loadScript('helpers/deployContract.js')
+contract = "pragma solidity ^0.4.11; contract CTCoin { // banker: public address of contract creator address banker; // balances: tracks all coin balances mapping (address => uint) private balances; function CTCoin() { banker = msg.sender; } // mintCoins(amount, receiver): 'mint' coins - send amount to address + update balances (only callable by banker) function mintCoins(uint amount, address receiver) { if(msg.sender != banker) return; balances[receiver] += amount; } // sendCoins(amount, address): send a specific amount of coins to an address + update balances function sendCoins(uint amount, address receiver) { if(balances[msg.sender] < amount) return; balances[msg.sender] -= amount; balances[receiver] += amount; } // getCTCoinBalance(address): (read only) returns amount of CT coins at address function getCTCoinBalance(address targetAddress) constant returns (uint _amount){ if(targetAddress != address(0)) { _amount = balances[targetAddress]; } else { _amount = balances[msg.sender]; } } }"
+deployContract(contract,eth.coinbase)
+eth.compile.solidity(contract).test
+eth.compile.solidity(contract)
+eth.compile.solidity(contract).test
+contract
+eth.compile.solidity(contract).test
+apm install etheratom

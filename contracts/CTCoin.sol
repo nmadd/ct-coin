@@ -1,9 +1,7 @@
 pragma solidity ^0.4.11;
 
 contract CTCoin {
-  /*****
-  STATE
-  *****/
+
   // banker: public address of contract creator
   address banker;
 
@@ -11,16 +9,9 @@ contract CTCoin {
   // balances: tracks all coin balances
   mapping (address => uint) private balances;
 
-  /*****
-  CONSTRUCTOR
-  *****/
   function CTCoin() {
     banker = msg.sender;
   }
-
-  /*****
-  METHODS
-  *****/
 
   // mintCoins(amount, receiver): 'mint' coins - send amount to address + update balances (only callable by banker)
   function mintCoins(uint amount, address receiver) {
