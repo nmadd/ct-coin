@@ -1,0 +1,7 @@
+.DS_Store
+chaindata/
+geth.log
+nodekey
+package-lock.json
+nodes/
+node_modules/
